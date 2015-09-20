@@ -6,7 +6,7 @@ web:
     links:
         - php:php
     volumes:
-        - '~/local/mount/directory:/PROJECT_NAME'
+        - '~/dev/adpress/website/src:/wpadpress'
     env_file: config.env
 php:
     container_name: php 
@@ -16,7 +16,7 @@ php:
     links:
         - db:db
     volumes:
-        - '~/local/mount/directory:/PROJECT_NAME'
+        - '~/dev/adpress/website/src:/wpadpress'
     env_file: config.env
 db:
     container_name: db
