@@ -3,9 +3,11 @@ web:
     build: nginx/.
     ports:
         - '80:80'
+        - '443:443'
     links:
         - php:php
     volumes:
+<<<<<<< HEAD
         - '~/dev/adpress/website/src:/wpadpress'
     env_file: config.env
 php:
@@ -16,6 +18,7 @@ php:
     links:
         - db:db
     volumes:
+<<<<<<< HEAD
         - '~/dev/adpress/website/src:/wpadpress'
     env_file: config.env
 db:
