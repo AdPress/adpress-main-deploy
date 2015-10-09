@@ -7,7 +7,6 @@ web:
     links:
         - php:php
     volumes:
-<<<<<<< HEAD
         - '~/dev/adpress/website/src:/wpadpress'
     env_file: config.env
 php:
@@ -18,7 +17,6 @@ php:
     links:
         - db:db
     volumes:
-<<<<<<< HEAD
         - '~/dev/adpress/website/src:/wpadpress'
     env_file: config.env
 db:
