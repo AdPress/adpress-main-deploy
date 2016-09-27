@@ -1,8 +1,4 @@
 #!/bin/bash
-
-# Set bitbucket Credentials
-echo -e "machine bitbucket.org\n login $BITBUCKET_LOGIN\npassword $BITBUCKET_PASSWORD\nmachine github.com\n login $GITHUB_LOGIN\npassword $GITHUB_PASSWORD\n" > ~/.netrc
-
 # Create our Directories structure
 if [ ! -d "/$PROJECT_NAME" ];
 then
