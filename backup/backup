@@ -8,7 +8,7 @@ TTL="`date '+%Y%m%d%H%M%S'`"
 mkdir -p /$PROJECT_NAME/wp-content/uploads
 
 echo 'creating database dump'
-mysqldump -h $DB_PORT_3306_TCP_ADDR --add-drop-table -u$MYSQL_USER -p $MYSQL_DATABASE --password=$MYSQL_PASSWORD > /$PROJECT_NAME/db.sql
+mysqldump -h $MYSQL_PORT_3306_TCP_ADDR --add-drop-table -u$MYSQL_USER -p $MYSQL_DATABASE --password=$MYSQL_PASSWORD > /$PROJECT_NAME/db.sql
 
 echo 'uploading to tarsnap'
 tarsnap --fsck

@@ -33,9 +33,8 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 #
 RUN curl -sS https://getcomposer.org/installer | php && \
 	mv composer.phar /usr/local/bin/composer
-CMD ["export PATH=/root/.composer/vendor/bin:$PATH"] # Add Composer Binary to PATH
 
-RUN composer global config github-oauth.github.com {{your-github-token}} # Github Token (Required for Composer Packages)
+CMD ["export PATH=/root/.composer/vendor/bin:$PATH"] # Add Composer Binary to PATH
 
 #
 # Entrypoint Script

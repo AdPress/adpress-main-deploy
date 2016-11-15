@@ -7,7 +7,7 @@ fi
 rm -rf /$PROJECT_NAME/*	
 
 # Wait until the mysql container is up and ready
-while [ "$(mysql -h $DB_PORT_3306_TCP_ADDR -u $MYSQL_USER -p$MYSQL_PASSWORD -e 'select 1')" == '' ]
+while [ "$(mysql -h $MYSQL_PORT_3306_TCP_ADDR -u $MYSQL_USER -p$MYSQL_PASSWORD -e 'select 1')" == '' ]
 do
         echo 'Waiting for MySql...'
         sleep 1
@@ -18,7 +18,7 @@ echo 'MySql is running...'
 wp core download --path=/$PROJECT_NAME --version=$WP_VERSION --allow-root
 
 # Configure WordPress
-wp core config  --path=/$PROJECT_NAME --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost=$DB_PORT_3306_TCP_ADDR --allow-root --extra-php <<PHP
+wp core config  --path=/$PROJECT_NAME --dbname=$MYSQL_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost=$MYSQL_PORT_3306_TCP_ADDR --allow-root --extra-php <<PHP
 define( 'WP_DEBUG', false );
 define( 'SAVE_QUERIES', false );
 define( 'WP_DEBUG_LOG', false );

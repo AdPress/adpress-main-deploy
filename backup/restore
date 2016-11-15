@@ -30,6 +30,6 @@ tarsnap -x -f $PROJECT_NAME-$date -C / $PROJECT_NAME/wp-content/uploads/
 
 # restore database
 echo "restoring data from mysql dump file"
-tarsnap -O -x -f  $PROJECT_NAME-$date $PROJECT_NAME/db.sql | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -D $MYSQL_DATABASE -h $DB_PORT_3306_TCP_ADDR 
+tarsnap -O -x -f  $PROJECT_NAME-$date $PROJECT_NAME/db.sql | mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -D $MYSQL_DATABASE -h $MYSQL_PORT_3306_TCP_ADDR 
 
 echo 'Finished: SUCCESS'
